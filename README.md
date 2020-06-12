@@ -35,7 +35,7 @@ Well, the serverless architecture needs some technologies to keep everything org
 
 In first of all we need to install the _`aws-cli`_, it will allow us to manage our AWS credentials in our local machine that will be used by Serverless and Terraform technologies.
 
-So, for that, follow [this link](aws_cli) to install `aws-cli` in your computer.
+So, for that, follow [this link][aws_cli] to install `aws-cli` in your computer.
 
 _After install `aws-cli` the command `aws` will be enabled in your command line to manage your aws account._
 
@@ -45,7 +45,7 @@ _After install `aws-cli` the command `aws` will be enabled in your command line 
 
 #### 1.2.1 Creating an account
 
-Once you have the AWS CLI installed, you will need to have an account in [AWS](aws) to manage your credentials, for that, create your aws account in [this link](aws_create_account) to proceed.
+Once you have the AWS CLI installed, you will need to have an account in [AWS][aws] to manage your credentials, for that, create your aws account in [this link][aws_create_account] to proceed.
 
 #### 1.2.2 Creating AWS IAM Credentials
 
@@ -53,7 +53,7 @@ You will need to generate IAM credentials at AWS Panel to access it programmatic
 
 Make sure to allow `Programmatic access` and provide `AdministratorAccess` to this user for Serverless and Terraform be able to manage this infrastructure.
 
-To see the documentation about how to create your IAM credentials, see [this link](aws_iam_credentials).
+To see the documentation about how to create your IAM credentials, see [this link][aws_iam_credentials].
 
 _After generate your credential file, provide it credentials using the AWS CLI command line:_
 
@@ -72,7 +72,7 @@ After that, you're done, all the platforms that use the aws cli to manage your a
 This project was developed using NodeJs, and also, need the npm (node package manager) to install the Serverless Framework CLI in the next steps, so you have to make sure to have this installed and configured in your environment.
 
 
-To download and install the NodeJS, follow [this link](nodejs_download).
+To download and install the NodeJS, follow [this link][nodejs_download].
 
 ---
 
@@ -84,7 +84,7 @@ For now, we must have the `serverless cli` available to execute the management o
 $ npm install -g serverless
 ```
 
-For more knowledge about serverless, see the docs at [serverless](serverless_docs).
+For more knowledge about serverless, see the docs at [serverless][serverless_docs].
 
 ---
 
@@ -92,7 +92,7 @@ For more knowledge about serverless, see the docs at [serverless](serverless_doc
 
 You will need to install terraform executable to manage your infrastructure as a code, so follow these steps:
 
-- Access [this link](terraform_download)
+- Access [this link][terraform_download]
 - Download the appropriate package
 - Unzip it
 - Add terraform executable to yout path
@@ -104,7 +104,7 @@ $ terraform
 Usage: terraform [--version] [--help] <command> [args]
 ```
 
-For this project we going to use the [AWS](terraform_aws) provider.
+For this project we going to use the [AWS][terraform_aws] provider.
 
 ---
 
