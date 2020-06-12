@@ -1,12 +1,12 @@
 # serverless
 
-[Technologies](#-technologies)
+[Technologies](#technologies)
 |
-[Installing](#-installing)
+[Installing](#installing)
 |
-[How It Works](#-how-it-works)
+[How It Works](#how-it-works)
 |
-[License](#-license)
+[License](#license)
 
 
 This project was created with the objective of being a base of studies for serverless technologies, using aws technologies in together with Serverless and terraform frameworks.
