@@ -1,12 +1,32 @@
-'use strict';
+"use strict";
 
-module.exports.register = async event => {
+const AWS = require("aws-sdk");
+AWS.config.update({
+  region: process.env.AWS_REGION,
+});
+
+const documentClient = new AWS.DynamoDB.DocumentClient();
+const bcrypt = require("bcryptjs");
+const { uuid } = require('uuidv4');
+
+module.exports.register = async (event) => {
+  const body = JSON.parse(event.body);
+  await documentClient
+    .put({
+      TableName: process.env.DYNAMODB_USERS,
+      Item: {
+        id: uuid(),
+        name: body.name,
+        email: body.email,
+        password: bcrypt.hashSync(body.password, 10),
+      },
+    })
+    .promise();
+
   return {
-    statusCode: 200,
-    body: JSON.stringify(
-      {
-        message: process.env.DYNAMODB_USERS,
-      }
-    ),
+    statusCode: 201,
+    body: JSON.stringify({
+      message: "Usuário inserico com sucesso",
+    }),
   };
 };
