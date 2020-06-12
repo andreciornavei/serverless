@@ -2,6 +2,6 @@ variable "environment" {
 
 }
 
-variable "jws_secret" {
+variable "jwt_secret" {
 
 }
