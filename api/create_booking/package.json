@@ -1,0 +1,12 @@
+{
+  "name": "create_booking",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "aws-sdk": "^2.696.0"
+  },
+  "dependencies": {
+    "uuidv4": "^6.1.0"
+  }
+}
