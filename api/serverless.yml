@@ -44,7 +44,7 @@ functions:
       - http:
           path: bookings
           method: post
-          authorizer: 
+          authorizer: authorizer
           
   list_bookings:
     role: ${ssm:${self:custom.stage}-list-bookings-iam-role}
@@ -58,4 +58,4 @@ functions:
           authorizer: authorizer
 
 custom:
-  stage: ${opt:state, self:provider.stage}
+  stage: ${opt:stage, self:provider.stage}
