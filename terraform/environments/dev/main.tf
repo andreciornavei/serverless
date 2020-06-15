@@ -11,8 +11,14 @@ module "users" {
 }
 
 module "bookings" {
-    source          = "../../infra/bookings"
+    source                  = "../../infra/bookings"
+    environment             = var.environment
+    write_capacity          = 1
+    read_capacity           = 1    
+    sns_notifications_arn   = module.notifications.notifications_topic_arn
+}
+
+module "notifications" {
+    source          = "../../infra/notifications"
     environment     = var.environment
-    write_capacity  = 1
-    read_capacity   = 1    
 }
