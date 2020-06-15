@@ -46,9 +46,9 @@ functions:
           method: post
           authorizer: 
           
-  list_booking:
+  list_bookings:
     role: ${ssm:${self:custom.stage}-list-bookings-iam-role}
-    handler: list_booking/index.handler
+    handler: list_bookings/index.handler
     environment:
       DYNAMODB_BOOKINGS: ${ssm:${self:custom.stage}-dynamodb-bookings-table}
     events:
