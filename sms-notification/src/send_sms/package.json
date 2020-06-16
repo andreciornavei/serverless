@@ -1,0 +1,9 @@
+{
+  "name": "send_sms",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "messagebird": "^3.5.0"
+  }
+}
