@@ -6,6 +6,8 @@
 |
 [How It Works](#how-it-works)
 |
+[Encryption](#encryption)
+|
 [License](#license)
 
 
@@ -120,6 +122,44 @@ _The magic for me, is a service provided by `aws` called `ssm` or (`AWS System M
 
 ---
 
+## Encryption
+
+This project contains some encrypted files for security reasons, this files are located at `./terraform/environments/dev/secrets.auto.tfvars` and `./terraform/environments/prod/secrets.auto.tfvars`. Them are used to provide some particular informations to our infrastructure.
+
+If you are a partner and already have a serverless.key to decrypt it files, then make sure to install [git-crypt][git_crypt] in your machine and run:
+
+```bash
+$ git-crypt unlock ~/.keys/serverless.key
+```
+
+_`~/.keys` should be the local where your key are placed and `serverless.key` should be the name of the key._
+
+If you are not a partner, so probably you not have the key. In this case, copy the template below and override the encrypted files, then replace the content with your own informations:
+
+```tfvards
+jwt_secret              = "your-own-data" #base64 key with 32 bytes
+admin_id                = "your-own-data" #uuid/v4
+admin_name              = "your-own-data"
+admin_email             = "your-own-data"
+admin_password          = "your-own-data" #encrypted with 10 rounds of bcrypt
+email_from              = "your-own-data"
+email_from_password     = "your-own-data"
+email_to                = "your-own-data"
+smtp_server             = "your-own-data"
+message_bird_api_key    = "your-own-data" #the api key of messagebird service
+sms_phone_from          = "your-own-data"
+sms_phone_to            = "your-own-data" 
+```
+
+Links to generate the approprieted data:
+
+- base64 = https://generate.plus/en/base64
+- uuid/v4 = https://www.uuidgenerator.net/
+- bcrypt = https://bcrypt-generator.com/
+- messagebird = https://messagebird.com/en/
+
+---
+
 ## License
 
 This project is under the MIT license. See the [LICENSE](./LICENSE) for details.
@@ -139,3 +179,4 @@ Developed by André Ciornavei - [Get in touch!](https://www.linkedin.com/in/andr
 [aws_cli]: https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html
 [aws_iam_credentials]: https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/getting-your-credentials.html
 [aws_create_account]: https://portal.aws.amazon.com/billing/signup#/start
+[git_crypt]: https://github.com/AGWA/git-crypt
