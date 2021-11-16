@@ -4,6 +4,6 @@
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
-    "aws-sdk": "^2.696.0"
+    "aws-sdk": "^2.814.0"
   }
 }
